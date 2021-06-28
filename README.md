@@ -2,6 +2,12 @@
 
 Apollo Link Schema with context support. Useful for Next.js apps with universal Apollo GraphQL client.
 
+## Install
+
+```sh
+pnpm i better-link-schema @apollo/client graphql
+```
+
 ## Example
 
 ```ts
@@ -26,9 +32,10 @@ const createIsomorphLink = () => {
 }
 
 // Now your client works on both server and client!
-export const createApolloClient = () => new ApolloClient({
+export const createApolloClient = () =>
+  new ApolloClient({
     ssrMode: typeof window === 'undefined',
     link: createIsomorphLink(),
     cache: new InMemoryCache()
-})
+  })
 ```

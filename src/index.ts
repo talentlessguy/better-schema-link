@@ -1,13 +1,13 @@
-import { ApolloLink, Observable } from '@apollo/client'
+import { ApolloLink, Observable, Operation } from '@apollo/client'
 import { GraphQLSchema } from 'graphql'
 import { execute } from 'graphql/execution/execute'
 
-export class SchemaLink extends ApolloLink {
+export class SchemaLink<Context = any> extends ApolloLink {
   schema: GraphQLSchema
   rootValue: any
   context: any
 
-  constructor({ schema, rootValue, context }: { schema: GraphQLSchema; rootValue: any; context: any }) {
+  constructor({ schema, rootValue, context }: { schema: GraphQLSchema; rootValue: any; context: Context }) {
     super()
 
     this.schema = schema
@@ -15,7 +15,7 @@ export class SchemaLink extends ApolloLink {
     this.context = context
   }
 
-  async _execute(operation) {
+  async _execute(operation: Operation) {
     const contextValue = typeof this.context === 'function' ? await this.context(operation) : this.context
 
     return execute(
@@ -28,7 +28,7 @@ export class SchemaLink extends ApolloLink {
     )
   }
 
-  request(operation) {
+  request(operation: Operation) {
     return new Observable((observer) => {
       Promise.resolve(this._execute(operation))
         .then((data) => {
