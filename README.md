@@ -1,6 +1,6 @@
-# better-link-schema
+# better-schema-link
 
-Apollo Link Schema with context support. Useful for Next.js apps with universal Apollo GraphQL client.
+Apollo `SchemaLink` with context support. Useful for Next.js apps with universal Apollo GraphQL client.
 
 ## Install
 
