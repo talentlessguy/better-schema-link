@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="logo.svg" height="128px" alt="apollo styled logo" />
+  <img src="https://raw.githubusercontent.com/talentlessguy/better-schema-link/master/logo.svg" height="128px" alt="apollo styled logo" />
 
 # better-schema-link
 
