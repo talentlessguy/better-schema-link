@@ -1,11 +1,18 @@
+<div align="center">
+  <img src="logo.svg" height="128px" alt="apollo styled logo" />
+
 # better-schema-link
 
-Apollo `SchemaLink` with context support. Useful for Next.js apps with universal Apollo GraphQL client.
+[![Size badge][size-badge]][bundlephobia] [![NPM][npm-badge]][npm-url]
+
+</div>
+
+Apollo `SchemaLink` with context support. Useful for Next.js apps with universal Apollo GraphQL client that require context (for example field authorization).
 
 ## Install
 
 ```sh
-pnpm i better-link-schema @apollo/client graphql
+pnpm i better-schema-link @apollo/client graphql
 ```
 
 ## Example
@@ -39,3 +46,8 @@ export const createApolloClient = () =>
     cache: new InMemoryCache()
   })
 ```
+
+[size-badge]: https://img.shields.io/bundlephobia/min/better-schema-link?style=for-the-badge&color=B28FB5
+[bundlephobia]: https://bundlephobia.com/package/better-schema-link
+[npm-badge]: https://img.shields.io/npm/v/better-schema-link?style=for-the-badge&color=B28FB5
+[npm-url]: https://npmjs.com/package/better-schema-link
