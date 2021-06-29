@@ -1,5 +1,5 @@
 {
-  "name": "better-link-schema",
+  "name": "better-schema-link",
   "version": "0.0.0",
   "description": "Apollo Link Schema with context support.",
   "main": "dist/index.cjs",
